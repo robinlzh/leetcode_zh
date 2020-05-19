@@ -8,7 +8,7 @@ class Solution(object):
         heap = []
         for num, freq in map.items():
             heappush(heap,(freq, num))
-            if len(heap) > k:
+            if len(heap) > k: # 维持k的小顶堆
                 heappop(heap)
 
         result = []
@@ -16,7 +16,7 @@ class Solution(object):
             top = heappop(heap)
             result.append(top[1])
 
-        return result[::-1]
+        return result[::-1] # 输出是正序的，需要倒序
 
 
 nums = [2,2,2,1,1,4,5,5,5,5]
